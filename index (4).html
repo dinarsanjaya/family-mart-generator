@@ -1,0 +1,260 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>
+   FamilyMart Receipt
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+   body {
+     font-family: 'Roboto Mono', monospace;
+   }
+   hr.thick-line {
+     border-top-width: 2px;
+     border-color: black;
+     margin-bottom: 0.75rem; /* mb-3 */
+   }
+   /* Slightly wider font by increasing letter spacing and font weight */
+   .font-wide {
+     letter-spacing: 0.05em;
+     font-weight: 600;
+   }
+  </style>
+ </head>
+ <body class="bg-white flex justify-center items-center min-h-screen p-4">
+  <div class="border border-black max-w-xs w-full p-4">
+   <div class="flex justify-center items-center space-x-2 mb-4">
+    <div class="flex flex-col space-y-1">
+     <div class="w-8 h-2 bg-black"></div>
+     <div class="w-8 h-2 bg-black"></div>
+    </div>
+    <h1 class="font-mono font-bold text-xl font-wide">
+     FamilyMart
+    </h1>
+   </div>
+   <p class="font-mono text-sm mb-1 font-wide">
+    STORE : <span id="storeName">FMI PULO GADUNG</span>
+   </p>
+   <p class="font-mono text-sm mb-1 font-wide">
+    31/05/2025 06:42 ICH 002
+   </p>
+   <p class="font-mono text-sm mb-1 font-wide">
+    RCT NO :
+    <span id="rctNo" class="font-extrabold font-wide">
+     640151598200017
+    </span>
+   </p>
+   <p class="font-mono text-sm mb-4 font-wide">
+    CASHIER : <span id="cashierName">Clara Andini</span>
+   </p>
+   <p class="font-mono font-extrabold text-center mb-4 text-base font-wide">
+    *SALES RECEIPT*
+   </p>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     Coca Cola Zero 390ml
+    </span>
+    <span id="priceZero">
+     6,300
+    </span>
+   </div>
+   <p id="qtyZero" class="font-mono text-sm mb-2 font-wide">
+    6,300 X 1
+   </p>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     Coca Cola Pet 250ml
+    </span>
+    <span id="pricePetTotal">
+     70,400
+    </span>
+   </div>
+   <p id="qtyPet" class="font-mono text-sm mb-2 font-wide">
+    17,600 X 4
+   </p>
+   <div class="font-mono text-sm mb-3 flex justify-between font-wide">
+    <span>
+     TOTAL
+    </span>
+    <span id="totalPrice">
+     Rp 76,700
+    </span>
+   </div>
+   <hr class="thick-line"/>
+   <p class="font-mono font-extrabold text-sm flex justify-between mb-1 font-wide">
+    <span>
+     SHOPEEPAY
+    </span>
+    <span id="paymentAmount" class="font-extrabold font-wide">
+     76,700
+    </span>
+   </p>
+   <p id="paymentCodeText" class="font-mono text-sm mb-3 font-wide">
+    RYQ2YX0P3IQI
+   </p>
+   <hr class="thick-line"/>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     TOTAL PAID
+    </span>
+    <span id="totalPaid">
+     Rp 76,700
+    </span>
+   </div>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     CHANGES
+    </span>
+    <span>
+     0
+    </span>
+   </div>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     # ITEM SOLD
+    </span>
+    <span id="itemSoldCount" class="font-wide">
+     5
+    </span>
+   </div>
+   <div class="font-mono text-sm mb-1 flex justify-between font-wide">
+    <span>
+     DPP Nilai Lain
+    </span>
+    <span>
+     Rp 2,132
+    </span>
+   </div>
+   <div class="font-mono text-sm mb-4 flex justify-between font-wide">
+    <span>
+     PPP
+    </span>
+    <span>
+     PPP 1,0
+    </span>
+   </div>
+   <div class="font-mono text-sm text-center mb-6 space-y-1 font-wide">
+    <p>
+     Harga sudah termasuk pajak
+    </p>
+    <p>
+     PT Fajar Mitra Indah
+    </p>
+    <p>
+     WA Business: 0898-3862-8998
+    </p>
+    <p>
+     IG &amp; TIKTOK: @FamilyMartID
+    </p>
+   </div>
+   <div class="flex justify-center">
+    <img alt="QR code black and white square pixel pattern" height="80" src="https://storage.googleapis.com/a1aa/image/df726981-7d89-4992-c6ad-1e93a0d1cb78.jpg" width="80"/>
+   </div>
+  </div>
+  <script>
+   // Expanded list of 50 cashier names
+   const cashierNames = [
+     "Clara Andini", "Rizky Pratama", "Sari Dewi", "Budi Santoso", "Dewi Lestari",
+     "Agus Wijaya", "Nina Marlina", "Fajar Hidayat", "Andi Saputra", "Lina Marlina",
+     "Dian Puspita", "Rina Sari", "Eka Putri", "Hendra Gunawan", "Sinta Wulandari",
+     "Yusuf Rahman", "Maya Sari", "Teguh Santoso", "Rini Kusuma", "Dedi Prasetyo",
+     "Nina Anggraini", "Ferry Kurniawan", "Sari Melati", "Bambang Supriyadi", "Lia Amalia",
+     "Rizal Fadli", "Dewi Anggraeni", "Joko Susilo", "Fitri Handayani", "Agung Prabowo",
+     "Siti Nurhaliza", "Hadi Santoso", "Mira Kusuma", "Rian Saputra", "Dewi Lestari",
+     "Andri Wijaya", "Nina Marlina", "Fajar Hidayat", "Lina Sari", "Dian Puspita",
+     "Rina Sari", "Eka Putri", "Hendra Gunawan", "Sinta Wulandari", "Yusuf Rahman",
+     "Maya Sari", "Teguh Santoso", "Rini Kusuma", "Dedi Prasetyo", "Nina Anggraini"
+   ];
+
+   // Random Jakarta store names
+   const storeNames = [
+     "FMI PULO GADUNG",
+     "FMI KEBAYORAN BARU",
+     "FMI TANAH ABANG",
+     "FMI KEMANG",
+     "FMI KUNINGAN",
+     "FMI MENTENG",
+     "FMI KELAPA GADING",
+     "FMI PASAR MINGGU",
+     "FMI CILANDAK",
+     "FMI GANDARIA"
+   ];
+
+   // Format number with thousand separator
+   function formatNumber(num) {
+     return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+   }
+
+   // Generate random 15-digit RCT NO
+   function generateRCTNo() {
+     let rct = "";
+     for(let i=0; i<15; i++) {
+       rct += Math.floor(Math.random() * 10);
+     }
+     return rct;
+   }
+
+   // Generate random 11-character payment code (alphanumeric uppercase)
+   function generatePaymentCode() {
+     const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+     let code = "";
+     for(let i=0; i<11; i++) {
+       code += chars.charAt(Math.floor(Math.random() * chars.length));
+     }
+     return code;
+   }
+
+   // Generate random quantities for items, total between 1 and 10
+   function generateQuantities() {
+     const totalItems = Math.floor(Math.random() * 10) + 1; // 1 to 10
+     const qtyZero = Math.floor(Math.random() * totalItems) + 1; // at least 1
+     const qtyPet = totalItems - qtyZero;
+     return { qtyZero, qtyPet, totalItems };
+   }
+
+   // Set random values on page load
+   window.onload = () => {
+     const cashier = cashierNames[Math.floor(Math.random() * cashierNames.length)];
+     const store = storeNames[Math.floor(Math.random() * storeNames.length)];
+     const rctNo = generateRCTNo();
+     const paymentCode = generatePaymentCode();
+
+     // Prices per item
+     const priceZero = 6300;
+     const pricePet = 17600;
+
+     // Generate random quantities
+     const { qtyZero, qtyPet, totalItems } = generateQuantities();
+
+     // Calculate totals
+     const totalZero = priceZero * qtyZero;
+     const totalPet = pricePet * qtyPet;
+     const totalPrice = totalZero + totalPet;
+
+     // Set cashier, store, rct no, payment code
+     document.getElementById("cashierName").textContent = cashier;
+     document.getElementById("storeName").textContent = store;
+     document.getElementById("rctNo").textContent = rctNo;
+     document.getElementById("paymentCodeText").textContent = paymentCode;
+
+     // Set prices and quantities with formatting
+     document.getElementById("priceZero").textContent = formatNumber(priceZero);
+     document.getElementById("qtyZero").textContent = `${formatNumber(priceZero)} X ${qtyZero}`;
+
+     document.getElementById("pricePetTotal").textContent = formatNumber(totalPet);
+     document.getElementById("qtyPet").textContent = `${formatNumber(pricePet)} X ${qtyPet}`;
+
+     // Set totals with formatting
+     document.getElementById("totalPrice").textContent = `Rp ${formatNumber(totalPrice)}`;
+     document.getElementById("paymentAmount").textContent = formatNumber(totalPrice);
+     document.getElementById("totalPaid").textContent = `Rp ${formatNumber(totalPrice)}`;
+
+     // Set item sold count
+     document.getElementById("itemSoldCount").textContent = totalItems;
+   }
+  </script>
+ </body>
+</html>
